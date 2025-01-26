@@ -13,7 +13,8 @@ class CreatePint:
     """
     Creates a new pint for you to use.
     """
-    body = []
+    def __init__(self):
+        self.body = []
 
     # Create functions
     def create(self, text: str = 'UNNAMED', className: str = '', tag: str = 'p'):
@@ -23,7 +24,7 @@ class CreatePint:
         `className` is the class of the tag. Optional.
         `tag` is the tag type. Defaults to 'p' (paragraph) if none specified.
         """
-        self.body.append(f'<{tag} class={className}>{text}</{tag}>')
+        self.body.append(f'<{tag} class="{className}">{text}</{tag}>')
     def create_anchor(self, text: str = 'UNNAMED', href: str = '#', className: str = ''):
         """
         Creates an anchor tag.
@@ -31,7 +32,7 @@ class CreatePint:
         `href` is the href of the anchor tag. Defaults to '#' if none specified. (does nothing)
         `className` is the class of the anchor tag. Optional.
         """
-        self.body.append(f'<a href={href} class={className}>{text}</a>')
+        self.body.append(f'<a href="{href}" class="{className}">{text}</a>')
 
     # Export functions
     def export_to_html(self):
@@ -47,7 +48,7 @@ class CreatePint:
         `printResult` controls whether the function will print the result of the export. Defaults to True.
         """
         html = ''.join(self.body)
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding='utf-8') as file:
             file.write(html)
         if printResult:
             print(f'Exported to {filename} successfully.')
@@ -58,8 +59,10 @@ class CreatePint:
         Merges two Pints together.
         `pint` is the Pint object to merge with.
         """
-        html = ''.join(pint.body)
-        self.body.append(html)
+        if not isinstance(pint, CreatePint):
+            raise TypeError("pint must be an instance of CreatePint")
+        divhtml = f'<div>{"".join(pint.body)}</div>'
+        self.body.append(divhtml)
 
 if __name__ == '__main__':
     print('What are you doing? Run demo.py instead.')
