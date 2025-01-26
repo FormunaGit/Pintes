@@ -10,6 +10,12 @@ __version__ = "0.1:PRERELEASE-2"
 
 # TODO: Make this pretty :3
 
+def version():
+    """
+    Returns the version of Pintes.
+    """
+    return __version__
+
 class CreatePint:
     """
     Creates a new pint for you to use.
@@ -52,6 +58,15 @@ class CreatePint:
             file.write(html)
         if printResult:
             print(f'Exported to {filename} successfully.')
+
+    # Pint merger
+    def pint_merge(self, pint):
+        """
+        Merges two Pints together.
+        `pint` is the Pint object to merge with.
+        """
+        html = ''.join(pint.body)
+        self.body.append(html)
 
 if __name__ == '__main__':
     print('What are you doing? Run demo.py instead.')
