@@ -8,7 +8,7 @@ venv = ".venv"
 
 [project]
 name = "pintes"
-version = "0.1.alpha"
+version = "0.2.alpha"
 authors = [
   { name="Formuna", email="no@thankyou.com" },
 ]
