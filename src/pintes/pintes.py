@@ -6,15 +6,8 @@ Pintes is a Python module designed to generate static HTML pages.
 """
 # Variables
 __author__ = "Formuna"
-__version__ = "0.2.alpha"
 
 # TODO: Make this pretty :3
-
-def version():
-    """
-    Returns the version of Pintes.
-    """
-    return __version__
 
 class CreatePint:
     """
