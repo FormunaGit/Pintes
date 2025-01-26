@@ -8,7 +8,7 @@ venv = ".venv"
 
 [project]
 name = "pintes"
-version = "0.3.alpha"
+version = "0.4.beta"
 authors = [
   { name="Formuna", email="no@thankyou.com" },
 ]
@@ -16,7 +16,7 @@ description = "A Python-based static HTML page generator similar to TKinter."
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",

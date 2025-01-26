@@ -17,4 +17,4 @@ Pintes internally uses a list that the tag create functions append to. This list
 
 As of 0.2.alpha.1 (0.2a1), Pintes is now on PyPI. You can install it using `pip install pintes` and use it as a module.
 
-Check out the `demo.py` file for a demo on how to use Pintes.
+Check out the demo folder for a demo on how to use Pintes.
