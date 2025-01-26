@@ -1,6 +1,8 @@
 # Pintes
 *An amalgamation of horror.*
+
 Pintes is a tool made in Python that allows users to develop static HTML pages with ease.
+
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/FormunaGit/Pintes/python-publish.yml?style=flat&logo=githubactions&logoColor=white) ![GitHub License](https://img.shields.io/github/license/FormunaGit/Pintes?logo=gnu) ![GitHub last commit](https://img.shields.io/github/last-commit/formunagit/pintes)
 
 ## Why?
