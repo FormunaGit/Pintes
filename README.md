@@ -18,3 +18,21 @@ Pintes internally uses a list that the tag create functions append to. This list
 As of 0.2.alpha.1 (0.2a1), Pintes is now on PyPI. You can install it using `pip install pintes` and use it as a module.
 
 Check out the demo folder for a demo on how to use Pintes.
+
+## What's available?
+- [x] Most HTML tags
+- [x] Divs support
+- [x] Classes support
+- [x] CSS support
+- [x] Image support
+- [x] Anchor/`a` tag support
+- [ ] JS support
+- [ ] Custom divs support (e.g. `ul` and `ol`)
+- [ ] Self-closing tags support (e.g. `br`)
+
+## License
+The license for Pintes is the GNU General Public License v3.0. You can view the license here in the LICENSE file or [here](https://www.gnu.org/licenses/gpl-3.0.html).
+
+Because of the license, Pintes is free to use, modify, and distribute. However, you must provide the source code and the license with the distribution if you modify it.
+## Contributing
+If you want to contribute to Pintes, you can fork the repository and make a pull request. I'll review it and merge it if it's good.

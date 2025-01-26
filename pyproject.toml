@@ -10,7 +10,7 @@ venv = ".venv"
 name = "pintes"
 version = "0.4.beta"
 authors = [
-  { name="Formuna", email="no@thankyou.com" },
+  { name="Formuna" },
 ]
 description = "A Python-based static HTML page generator similar to TKinter."
 readme = "README.md"
