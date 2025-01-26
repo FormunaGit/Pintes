@@ -26,9 +26,11 @@ Check out the demo folder for a demo on how to use Pintes.
 - [x] CSS support
 - [x] Image support
 - [x] Anchor/`a` tag support
-- [ ] JS support
-- [ ] Custom divs support (e.g. `ul` and `ol`)
-- [ ] Self-closing tags support (e.g. `br`)
+- [x] JS support
+- [x] Custom divs support (e.g. `ul` and `ol`)
+- [x] Self-closing tags support (e.g. `br`)
+
+Am I missing something? [Help Pintes and make an issue!](https://github.com/FormunaGit/Pintes/issues)
 
 ## License
 The license for Pintes is the GNU General Public License v3.0. You can view the license here in the LICENSE file or [here](https://www.gnu.org/licenses/gpl-3.0.html).

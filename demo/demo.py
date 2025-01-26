@@ -52,6 +52,32 @@ root.create('This is a centered paragraph with a class.', className='centered')
 # Or you could just use CSS and give the image a class. Here we use the `width` and `height` parameters to make the image smaller.
 root.create_image('./image-demo.png', alt='Image Demo', width='25%', height='25%')
 
+# Let's add some JavaScript to the page using multi-line strings.
+# The `position` parameter is optional and defaults to 'bottom'.
+js = """
+console.log("Hello, World!")
+console.warn("This is a warning!")
+console.error("This is an error!")
+alert("Hello user! This alert was made with JavaScript in Pintes!")
+"""
+root.add_js(js, position='bottom')
+
+# What about unordered lists and ordered lists? Glad you (didn't) ask!
+# Creating a list is the same as creating a div tag, except you specify the `tag` parameter in `pint_merge()`.
+ulRoot = pintes.CreatePint()
+ulRoot.create('This is in an unordered list.', tag='h2')
+ulRoot.create('This is a `li` tag inside an unordered list.', tag='li')
+ulRoot.create('This is another `li` tag inside an unordered list.', tag='li')
+ulRoot.create('Pintes is cool.', tag='li')
+# Now we merge the unordered list into the root Pint with the `tag` parameter set to 'ul'.
+root.pint_merge(ulRoot, tag='ul')
+
+# What if you have a tag you want to use, but it's a self-closing tag such as <br/> or <hr/>?
+# You can use the `selfClosing` parameter in `create()` to create self-closing tags.
+# Note that if you specify text in a self-closing tag, it will raise a ValueError.
+root.create(selfClosing=True, tag='hr')
+root.create('Hey!')
+
 # Now, to export the code you've made to an HTML file.
 root.export_to_html_file('demo.html')
 # This will overwrite the file if it already exists.

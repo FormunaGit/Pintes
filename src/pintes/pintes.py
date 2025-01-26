@@ -16,16 +16,26 @@ class CreatePint:
     def __init__(self):
         self.body = []
         self.head = []
+        # JS
+        self.top_js = []
+        self.bottom_js = []
 
     # Create functions
-    def create(self, text: str = 'UNNAMED', className: str = '', tag: str = 'p'):
+    def create(self, text: str = 'UNNAMED', className: str = '', tag: str = 'p', selfClosing: bool = False):
         """
         Creates a new customizable tag.
         `text` is the text inside the tag. Defaults to 'UNNAMED' if none specified.
         `className` is the class of the tag. Optional.
         `tag` is the tag type. Defaults to 'p' (paragraph) if none specified.
+        `selfClosing` is a boolean that determines if the tag is self-closing. Defaults to False. (e.g. <br/> is self-closing.) Will raise a ValueError if text is specified while this is true.
         """
-        self.body.append(f'<{tag} class="{className}">{text}</{tag}>')
+        if selfClosing:
+            if text == 'UNNAMED':
+                self.body.append(f'<{tag} class="{className}"/>')
+            else:
+                raise ValueError("selfClosing tags cannot have text.")
+        else:
+            self.body.append(f'<{tag} class="{className}">{text}</{tag}>')
     def create_anchor(self, text: str = 'UNNAMED', href: str = '#', className: str = ''):
         """
         Creates an anchor tag.
@@ -51,7 +61,9 @@ class CreatePint:
         #return "".join(self.body)
         body = "".join(self.body)
         head = ''.join(self.head)
-        html = f'<!DOCTYPE html><html><head>{head}</head><body>{body}</body></html>'
+        top_js = ''.join(self.top_js)
+        bottom_js = ''.join(self.bottom_js)
+        html = f'<!DOCTYPE html><html><head>{head}</head><body>{top_js} {body} {bottom_js}</body></html>'
         return html
 
     def export_to_html_file(self, filename: str = 'index.html', printResult: bool = True):
@@ -67,14 +79,15 @@ class CreatePint:
             print(f'Exported to {filename} successfully.')
 
     # Pint merger
-    def pint_merge(self, pint):
+    def pint_merge(self, pint, tag: str = 'div'):
         """
         Merges two Pints together.
         `pint` is the Pint object to merge with.
+        `tag` is the tag to wrap the merged Pint in. Defaults to 'div'. Can be set to any tag that supports children elements.
         """
         if not isinstance(pint, CreatePint):
             raise TypeError("pint must be an instance of CreatePint")
-        divhtml = f'<div>{"".join(pint.body)}</div>'
+        divhtml = f'<{tag}>{"".join(pint.body)}</{tag}>'
         self.body.append(divhtml)
 
     # Head functions
@@ -103,6 +116,19 @@ class CreatePint:
         `css` is the string of CSS. Defaults to Nothing.
         """
         self.head.append(f'<style>{css}</style>')
+    # JavaScript-related functions
+    def add_js(self, js: str = 'console.log("Powered by Pintes!")', position: str = 'bottom'):
+        """
+        Adds raw JavaScript data to the page.
+        `js` is the string of JavaScript. Defaults to a one-liner that prints "Powered by Pintes!" in the console.
+        `position` is the position of where the JavaScript tag is placed. Defaults to 'bottom' (just ontop `</body>`).
+        """
+        if position == 'top':
+            self.top_js.append(f'<script>{js}</script>')
+        elif position == 'bottom':
+            self.bottom_js.append(f'<script>{js}</script>')
+        else:
+            raise ValueError("position must be either 'top' or 'bottom'")
 
 if __name__ == '__main__':
     print('What are you doing? Run demo.py instead.')
