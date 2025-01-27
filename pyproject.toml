@@ -28,8 +28,3 @@ keywords = ["html", "generator", "tkinter"]
 [project.urls]
 Source = "https://github.com/FormunaGit/Pintes"
 Issues = "https://github.com/FormunaGit/Pintes/issues"
-
-[project.optional-dependencies]
-recommended = [
-    "mkdocs-minify-plugin",
-]
