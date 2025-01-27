@@ -5,7 +5,7 @@ site_description: Documentation for the Pintes project.
 repo_url: https://github.com/FormunaGit/Pintes
 repo_name: FormunaGit/Pintes
 theme:
-  name: theme
+  name: material
 plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
