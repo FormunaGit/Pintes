@@ -7,7 +7,8 @@ Pintes is a Python module designed to generate static HTML pages.
 # Variables
 __author__ = "Formuna"
 
-# TODO: Make this pretty :3
+# TODO: Make this pretty
+
 
 class CreatePint:
     """
@@ -22,7 +23,7 @@ class CreatePint:
 
     # Create functions
     def create(self, text: str = 'UNNAMED', className: str = '', tag: str = 'p', selfClosing: bool = False):
-        """
+        """  # noqa: E501
         Creates a new customizable tag.
         `text` is the text inside the tag. Defaults to 'UNNAMED' if none specified.
         `className` is the class of the tag. Optional.
